@@ -1,4 +1,5 @@
 import tweepy
+import time
 from datetime import datetime, timedelta
 from credentials import *
 
@@ -11,10 +12,10 @@ days_to_keep = 7
 
 # tweets and favorites to keep
 tweets_to_save = [
-    910473178169868288 #keybase tweet
+    910473178169868288  # keybase tweet
 ]
 favs_to_save = [
-    #000000000000000000
+    # 000000000000000000
 ]
 
 # auth and api
@@ -37,7 +38,8 @@ if delete_tweets:
         # where tweets are not in save list and older than cutoff date
         if tweet.id not in tweets_to_save and tweet.created_at < cutoff_date:
             if verbose:
-                print("Deleting %d: [%s] %s" % (tweet.id, tweet.created_at, tweet.text))
+                print("Deleting %d: [%s] %s" %
+                      (tweet.id, tweet.created_at, tweet.text))
             if not test_mode:
                 api.destroy_status(tweet.id)
             deletion_count += 1
@@ -59,7 +61,8 @@ if delete_favs:
         # where tweets are not in save list and older than cutoff date
         if tweet.id not in favs_to_save and tweet.created_at < cutoff_date:
             if verbose:
-                print("Unfavoring %d: [%s] %s" % (tweet.id, tweet.created_at, tweet.text))
+                print("Unfavoring %d: [%s] %s" %
+                      (tweet.id, tweet.created_at, tweet.text))
             if not test_mode:
                 api.destroy_favorite(tweet.id)
 
@@ -70,3 +73,5 @@ if delete_favs:
     print("Unfavored %d tweets, ignored %d" % (unfav_count, kept_count))
 else:
     print("Not unfavoring tweets")
+
+time.sleep(10)
