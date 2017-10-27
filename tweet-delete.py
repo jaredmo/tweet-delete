@@ -5,10 +5,10 @@ from credentials import *
 
 # options
 test_mode = False
-verbose = True
+verbose = False
 delete_tweets = True
 delete_favs = True
-days_to_keep = 7
+days_to_keep = 30
 
 # tweets and favorites to keep
 tweets_to_save = [
