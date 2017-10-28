@@ -8,7 +8,7 @@ test_mode = False
 verbose = False
 delete_tweets = True
 delete_favs = True
-days_to_keep = 30
+days_to_keep = 10
 
 # tweets and favorites to keep
 tweets_to_save = [
