@@ -74,4 +74,4 @@ if delete_favs:
 else:
     print("Not unfavoring tweets")
 
-time.sleep(10)
+time.sleep(3)
