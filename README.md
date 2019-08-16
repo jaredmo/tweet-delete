@@ -3,4 +3,6 @@ My script for deleting and unfavoriting tweets over 10 days old. Requires a sepa
 
 There is also a Dockerfile and requirements.txt to build a docker image.
 
+```
 docker build —tag=tweet-delete .
+```
